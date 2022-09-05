@@ -1,0 +1,32 @@
+scalar JSON
+scalar JSONObject
+
+type Reference {
+  fieldname: String!
+  path: String!
+  typename: String!
+  description: String!
+  affinity: Float
+  count: Int!
+}
+
+type Type {
+  typename: String!
+  count: Int!
+  references: [Reference!]!
+}
+
+type Query {
+  meta: [Type]
+  graph: JSON
+}
+
+input CreateInput {
+  typename: String!
+  preset: JSON
+}
+
+type Mutation {
+  create(typename: String!, preset: JSON): JSON
+  createMany(inputs: [CreateInput!]!): JSON
+}

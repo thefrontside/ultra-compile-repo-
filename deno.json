@@ -1,0 +1,13 @@
+{
+  "tasks": {
+    "dev": "COMPUTED_PATH='../factory/computed.ts' deno run -A ./server.tsx",
+    "start": "COMPUTED_PATH='../factory/computed.ts' ULTRA_MODE=production deno run -A --no-check --no-remote ./server.tsx",
+    "build": "deno run -A ./build.ts"
+  },
+  "compilerOptions": {
+    "jsx": "react-jsxdev",
+    "jsxImportSource": "react"
+},
+  "importMap": "./importMap.json"
+}
+  
